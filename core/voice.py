@@ -19,10 +19,19 @@ class VoiceEngine:
             self._engine.setProperty("rate", 175)
             self._engine.setProperty("volume", 0.9)
             voices = self._engine.getProperty("voices")
+            turkish_voice = None
+            english_voice = None
             for voice in voices:
-                if "english" in voice.name.lower() or "en" in voice.id.lower():
-                    self._engine.setProperty("voice", voice.id)
-                    break
+                if voice.id == "trk/tr" or "turkish" in voice.name.lower():
+                    turkish_voice = voice
+                elif english_voice is None and (
+                    "en-us" in voice.id.lower() or "en-gb" in voice.id.lower()
+                ):
+                    english_voice = voice
+            if turkish_voice:
+                self._engine.setProperty("voice", turkish_voice.id)
+            elif english_voice:
+                self._engine.setProperty("voice", english_voice.id)
         except Exception as e:
             print(f"Voice engine init error: {e}")
             self._engine = None
