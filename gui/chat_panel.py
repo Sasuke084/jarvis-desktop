@@ -239,7 +239,7 @@ class ChatPanel(ctk.CTkFrame):
         for widget in self.chat_container.winfo_children():
             widget.destroy()
         self.gemini.reset_chat()
-        self._show_welcome()
+        self.after(100, self._show_welcome)
 
     def send_command(self, command: str) -> None:
         self.input_entry.delete(0, "end")

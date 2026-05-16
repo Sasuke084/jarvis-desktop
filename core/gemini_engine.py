@@ -54,7 +54,19 @@ class GeminiEngine:
             response = self.chat.send_message(message)
             return response.text
         except Exception as e:
-            return f"⚠ Hata oluştu: {str(e)}"
+            error_str = str(e)
+            if "429" in error_str or "RESOURCE_EXHAUSTED" in error_str:
+                return (
+                    "⚠ API kota sınırına ulaşıldı. "
+                    "Lütfen birkaç dakika bekleyip tekrar deneyin veya "
+                    "API anahtarınızın kotasını kontrol edin.\n\n"
+                    "Detay: https://ai.google.dev/gemini-api/docs/rate-limits"
+                )
+            if "403" in error_str or "PERMISSION_DENIED" in error_str:
+                return "⚠ API erişim izni reddedildi. Lütfen API anahtarınızı kontrol edin."
+            if "INVALID" in error_str.upper() and "KEY" in error_str.upper():
+                return "⚠ Geçersiz API anahtarı. Lütfen anahtarınızı kontrol edin."
+            return f"⚠ Hata oluştu: {error_str[:200]}"
 
     def reset_chat(self) -> None:
         if self.client:
