@@ -1,0 +1,51 @@
+"""JARVIS Theme - Futuristic color scheme and styling constants."""
+
+# Main colors
+BG_DARK = "#0a0e17"
+BG_PANEL = "#0d1421"
+BG_SIDEBAR = "#0b1120"
+BG_INPUT = "#111a2e"
+BG_CHAT_BUBBLE_USER = "#1a2744"
+BG_CHAT_BUBBLE_JARVIS = "#0f1a2d"
+BG_BUTTON = "#1a3a5c"
+BG_BUTTON_HOVER = "#1e4a72"
+BG_HEADER = "#0b1428"
+
+# Accent colors
+ACCENT_BLUE = "#00bfff"
+ACCENT_CYAN = "#00e5ff"
+ACCENT_GLOW = "#0099cc"
+ACCENT_DIM = "#1a6b8a"
+ACCENT_GREEN = "#00ff88"
+ACCENT_RED = "#ff3355"
+ACCENT_ORANGE = "#ff8800"
+ACCENT_YELLOW = "#ffcc00"
+
+# Text colors
+TEXT_PRIMARY = "#e0e8f0"
+TEXT_SECONDARY = "#7a8fa6"
+TEXT_ACCENT = "#00bfff"
+TEXT_DIM = "#4a5f78"
+TEXT_JARVIS = "#00e5ff"
+
+# Borders
+BORDER_COLOR = "#1a2d4a"
+BORDER_GLOW = "#00bfff"
+
+# Fonts
+FONT_FAMILY = "Consolas"
+FONT_FAMILY_ALT = "Courier New"
+FONT_TITLE = (FONT_FAMILY, 24, "bold")
+FONT_HEADER = (FONT_FAMILY, 16, "bold")
+FONT_BODY = (FONT_FAMILY, 13)
+FONT_SMALL = (FONT_FAMILY, 11)
+FONT_TINY = (FONT_FAMILY, 9)
+FONT_CHAT = (FONT_FAMILY, 12)
+FONT_INPUT = (FONT_FAMILY, 13)
+FONT_BUTTON = (FONT_FAMILY, 12, "bold")
+
+# Sizes
+SIDEBAR_WIDTH = 280
+HEADER_HEIGHT = 60
+INPUT_HEIGHT = 50
+CORNER_RADIUS = 8
